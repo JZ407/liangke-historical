@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pkl
+*.db
+*.xlsx
+*.docx
+*.zip
+*.txt
+.env
+.claude/
