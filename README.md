@@ -32,3 +32,4 @@ liangke_historical/
 
 - 2026-05-21: 新增 `published_at` 字段，移除失效的 `original_date` 和 `liangke_date`
 - 2026-05-21: 完成全部 8,953 篇文章的详情抓取
+- 2026-05-21: 修复 flash 详情页解析器，从 `div.flash-details` 提取标题和正文

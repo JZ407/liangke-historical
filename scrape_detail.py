@@ -143,6 +143,12 @@ def parse_article_detail(html: str, url: str, article_type: str, session=None):
         h2 = soup.find('h2')
         if h2:
             title = h2.get_text(strip=True)
+    elif article_type == 'flash':
+        flash_details = soup.find('div', class_='flash-details')
+        if flash_details:
+            h2 = flash_details.find('h2')
+            if h2:
+                title = h2.get_text(strip=True)
     else:
         h1 = soup.find('h1', class_='page-header')
         if h1:
@@ -156,6 +162,12 @@ def parse_article_detail(html: str, url: str, article_type: str, session=None):
     content = ''
     if is_reference:
         content_div = soup.find('div', class_='refer-txt')
+    elif article_type == 'flash':
+        flash_details = soup.find('div', class_='flash-details')
+        if flash_details:
+            content_div = flash_details.find('div', class_='txt')
+        else:
+            content_div = None
     else:
         content_div = soup.find('div', class_='content')
     if content_div:
