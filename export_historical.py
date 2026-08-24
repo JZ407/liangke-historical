@@ -1,11 +1,11 @@
 """
-Export historical.db articles to Excel.
+Export historical_final.db articles to Excel.
 """
 import os
 import pandas as pd
 from sqlalchemy import create_engine
 
-DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'historical.db')
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'historical_final.db')
 engine = create_engine(f'sqlite:///{DB_PATH}')
 
 df = pd.read_sql("""

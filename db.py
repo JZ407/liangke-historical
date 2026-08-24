@@ -7,7 +7,7 @@ from datetime import datetime
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, 'historical.db')
+DB_PATH = os.path.join(BASE_DIR, 'historical_final.db')
 
 engine = create_engine(f'sqlite:///{DB_PATH}', pool_pre_ping=True, echo=False)
 Session = sessionmaker(bind=engine)
